@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<script>
+	
+var slideIndex = 1;
+showSlides(slideIndex);
+
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+</script>
+<title>Evaluare</title> 
+<link rel="stylesheet" href="evaluare2.css">
+
+
+</head>
+<body>
+
+<h1>Alexandra SIMIONOV</h1>
+<h2>alexandrasimionov02@gmail.com</h2>
+<p>Specificatii tehnice ale statiei principale de lucru</p> <br>
+<table>
+  <tr>
+    <th>Denumire componenta</th>
+    <th>Producator</th>
+    <th>Parametri</th>
+  </tr>
+  <tr>
+    <td>Intel Core i7-1165G7</td>
+    <td>Intel</td>
+    <td>12M Cache, up to 4.70 GHz, with IPU</td>
+  </tr>
+  <tr>
+    <td>Redmi Note 9 Pro</td>
+    <td>Xiaomi</td>
+    <td> 64GB, 6GB RAM, Dual SIM, Glacier White</td>
+  </tr>
+  <tr>
+    <td>Router TL-WR841N</td>
+    <td>TP-LINK</td>
+    <td>300Mbps Wireless N Router</td>
+  </tr>
+   
+</table>
+<div id="div1">
+<p>Structura retelei personale si accesul la internet</p>
+<img id="img1" src="retea.jpeg" width="350" height="280" >
+<p id="p2">Caracteristicile conexiunii la retea</p>
+<li>Adresa MAC:94-E2-3C-AA-6F-AE</li>
+<li>Adresa IP: 193.226.6.237</li>
+<li>Debit de download: 19.85</li>
+<li>Debit de upload: 34.31</li> 
+
+
+
+
+</div>
+<p><u><b> Utilizarea resurselor (slideshow) </b></u></p>
+
+
+<div class="container">
+
+
+  <div class="mySlides">
+    <div class="numbertext">1 / 4</div>
+      <img src="s2.jpg" style="width:50%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 4</div>
+      <img src="s3.jpg" style="width:50%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 4</div>
+      <img src="s4.jpg" style="width:50%">
+  </div>
+
+   <div class="mySlides">
+    <div class="numbertext">4/ 4</div>
+      <img src="s5.jpg" style="width:50%">
+  </div>
+
+  
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="s2.jpg" style="width:100%" onclick="currentSlide(1)" alt="Utilizarea resurselor ">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="s3.jpg" style="width:100%" onclick="currentSlide(2)" alt="Utilizarea resurselor ">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="s4.jpg" style="width:100%" onclick="currentSlide(3)" alt="Utilizarea resurselor ">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="s5.jpg" style="width:100%" onclick="currentSlide(4)" alt="Utilizarea resurselor ">
+    </div>
+    
+  </div>
+</div>
+
+</body>
+</html>
